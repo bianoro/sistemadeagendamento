@@ -4,6 +4,8 @@ import multer from 'multer';
 import multerConfig from './config/multer.js';
 import UserController from "./app/controllers/UserController.js";
 import SessionController from "./app/controllers/SessionController.js";
+import FileController from "./app/controllers/FileController.js";
+
 import authMiddleware from "./app/middlewares/auth.js";
 // import User from './app/models/User.js';
 
@@ -18,9 +20,7 @@ routes.use(authMiddleware)
 routes.put('/users', UserController.update)
 
 //Upload de arquivos
-routes.post('/files', upload.single('file'), (req, res ) =>{
-    return res.json({ message: 'tudo ok' })
-});
+routes.post('/files', upload.single('file'), FileController.store );
 
 //antes teste para inserir dados no banco pela primeira vez
 /* routes.get('/', async (req, res) => {
