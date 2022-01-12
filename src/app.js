@@ -1,5 +1,8 @@
 // const express = require ('express');
 import express from 'express';
+
+import path from 'path';
+
 // const routes = require ('./router');
 import routes from './router.js';
 
@@ -13,7 +16,9 @@ class App{
     }
 
     middlewares(){
-        this.server.use(express.json())
+        this.server.use(express.json());
+        this.server.use('/files', express.static(path.resolve(__dirname, '..','tmp','uploads')))
+
     }
 
     routes(){

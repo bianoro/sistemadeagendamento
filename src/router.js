@@ -5,6 +5,7 @@ import multerConfig from './config/multer.js';
 import UserController from "./app/controllers/UserController.js";
 import SessionController from "./app/controllers/SessionController.js";
 import FileController from "./app/controllers/FileController.js";
+import CollaboratorController from "./app/controllers/CollaboratorController.js";
 
 import authMiddleware from "./app/middlewares/auth.js";
 // import User from './app/models/User.js';
@@ -18,6 +19,9 @@ routes.post('/session', SessionController.store)
 // Rotas autenticadas
 routes.use(authMiddleware)
 routes.put('/users', UserController.update)
+
+//Lista todos os colaboradores
+routes.get('/collaborator', CollaboratorController.index)
 
 //Upload de arquivos
 routes.post('/files', upload.single('file'), FileController.store );
