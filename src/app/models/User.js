@@ -1,4 +1,3 @@
-import { password, user } from 'pg/lib/defaults';
 import Sequelize, { Model } from 'sequelize';
 import bcrypt from 'bcryptjs';
 

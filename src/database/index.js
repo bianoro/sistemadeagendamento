@@ -1,7 +1,7 @@
 import Sequelize from "sequelize";
 import User from '../app/models/User.js';
 import File from "../app/models/File.js";
-import Appointments from "../app/models/Appointments.js";
+import Appointments from "../app/models/Appointment.js";
 import databaseConfig from '../config/database.js';
 
 const models = [User, File, Appointments];

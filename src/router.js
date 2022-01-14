@@ -6,6 +6,7 @@ import UserController from "./app/controllers/UserController.js";
 import SessionController from "./app/controllers/SessionController.js";
 import FileController from "./app/controllers/FileController.js";
 import CollaboratorController from "./app/controllers/CollaboratorController.js";
+import AppointmentController from "./app/controllers/AppointmentController.js";
 
 import authMiddleware from "./app/middlewares/auth.js";
 // import User from './app/models/User.js';
@@ -19,6 +20,9 @@ routes.post('/session', SessionController.store)
 // Rotas autenticadas
 routes.use(authMiddleware)
 routes.put('/users', UserController.update)
+
+//Rota de agendamento
+routes.post('/appointments', AppointmentController.store)
 
 //Lista todos os colaboradores
 routes.get('/collaborator', CollaboratorController.index)
