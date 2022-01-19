@@ -7,6 +7,7 @@ import SessionController from "./app/controllers/SessionController.js";
 import FileController from "./app/controllers/FileController.js";
 import CollaboratorController from "./app/controllers/CollaboratorController.js";
 import AppointmentController from "./app/controllers/AppointmentController.js";
+import ScheduleController from "./app/controllers/ScheduleController.js";
 
 import authMiddleware from "./app/middlewares/auth.js";
 // import User from './app/models/User.js';
@@ -29,6 +30,9 @@ routes.get('/appointments', AppointmentController.index)
 
 //Lista todos os colaboradores
 routes.get('/collaborator', CollaboratorController.index)
+
+//Listagem de agendamento por colaborador
+routes.get('/schedule', ScheduleController.index)
 
 //Upload de arquivos
 routes.post('/files', upload.single('file'), FileController.store );
