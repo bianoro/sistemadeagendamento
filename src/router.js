@@ -8,6 +8,7 @@ import FileController from "./app/controllers/FileController.js";
 import CollaboratorController from "./app/controllers/CollaboratorController.js";
 import AppointmentController from "./app/controllers/AppointmentController.js";
 import ScheduleController from "./app/controllers/ScheduleController.js";
+import NotificationController from "./app/controllers/NotificationController.js";
 
 import authMiddleware from "./app/middlewares/auth.js";
 // import User from './app/models/User.js';
@@ -34,6 +35,11 @@ routes.get('/collaborator', CollaboratorController.index)
 //Listagem de agendamento por colaborador
 routes.get('/schedule', ScheduleController.index)
 
+//Listagem de notificações
+routes.get('/notifications', NotificationController.index)
+
+//Marcar como lida
+routes.put('/notifications/:id', NotificationController.update)
 //Upload de arquivos
 routes.post('/files', upload.single('file'), FileController.store );
 
