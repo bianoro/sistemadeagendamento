@@ -54,7 +54,7 @@ class AppointmentController {
         })
 
         if (!isCollaborator) {
-            return res.status(401).json({ error: 'Colaborador não localizado!' })
+            return res.status(401).json({ error: 'Colaborador não localizado.' })
         }
 
         const startHour = startOfHour(parseISO(date));
